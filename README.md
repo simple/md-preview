@@ -15,7 +15,7 @@ as github styled HTML.
 
 ## Caveats
 
-* Only supports Mac OS X.
+By dropping the [GitHub Markdown Rendering API](http://developer.github.com/v3/markdown/), it does not support GFM anymore(so I have changed the project name).
 
 ## Thanks
 
