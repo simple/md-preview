@@ -4,7 +4,7 @@ import os
 import sys
 path = os.path.join(os.path.dirname(__file__), '..')
 sys.path.insert(0, path)
-import gfm_preview
+import md_preview
 
 
 if len(sys.argv) < 2:
@@ -18,12 +18,12 @@ mdfile_path = sys.argv[1]
 username = os.environ.get('GITHUB_USERNAME', False)
 token = os.environ.get('GITHUB_TOKEN', False)
 if username and token:
-    gfm_preview.github_login_with_token(username, token)
+    md_preview.github_login_with_token(username, token)
 
 text = ''
 with open(mdfile_path, 'r') as fd:
     text = fd.read()
 
-html = gfm_preview.render_markdown(text)
+html = md_preview.render_markdown(text)
 
-gfm_preview.open_in_browser(html)
+md_preview.open_in_browser(html)
