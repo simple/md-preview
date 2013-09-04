@@ -19,7 +19,7 @@ setup(
     author_email='mr.simple@gmail.com',
     packages=['gfm_preview'],
     scripts=['bin/gfm-preview'],
-    url='http://pypi.python.org/pypi/GfmPreview/',
+    url='https://github.com/simple/gfm-preview',
     license='LICENSE.txt',
     description='GitHub flavored markdown preview',
     long_description=open('README.md').read(),
