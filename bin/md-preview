@@ -2,28 +2,19 @@
 # -*- coding: utf-8 -*-
 import os
 import sys
-path = os.path.join(os.path.dirname(__file__), '..')
-sys.path.insert(0, path)
+import codecs
 import md_preview
 
+md_files = sys.argv[1:]
+for md_file in md_files:
+    if not os.path.exists(md_file):
+        print "file not found: %s\n" % (md_file)
+        continue
 
-if len(sys.argv) < 2:
-    sys.exit('Usage: %s markdown_doc_path' % sys.argv[0])
+    text = ''
+    with codecs.open(md_file, mode="r", encoding="utf-8") as fd:
+        text = fd.read()
 
-if not os.path.exists(sys.argv[1]):
-    sys.exit('ERROR: file %s was not found!' % sys.argv[1])
+    html = md_preview.render(text)
 
-mdfile_path = sys.argv[1]
-
-username = os.environ.get('GITHUB_USERNAME', False)
-token = os.environ.get('GITHUB_TOKEN', False)
-if username and token:
-    md_preview.github_login_with_token(username, token)
-
-text = ''
-with open(mdfile_path, 'r') as fd:
-    text = fd.read()
-
-html = md_preview.render_markdown(text)
-
-md_preview.open_in_browser(html)
+    md_preview.view_in_browser(html)

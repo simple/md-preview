@@ -1,1 +1,6 @@
+v0.2.0, 2013-09-05
+ * Rename the project to md-preview.
+ * Use Markdown package(https://pypi.python.org/pypi/Markdown) instead of GitHub API.
+ * Windows and Linux support(not fully tested).
+ 
 v0.1.0, 2013-09-04 -- Initial release.

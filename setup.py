@@ -4,7 +4,7 @@ try:
     # arguments that distutils doesn't understand
     setuptools_kwargs = {
         'install_requires': [
-            "github3.py >= 0.7.0",
+            "Markdown",
         ],
         'zip_safe': False,
     }
@@ -14,15 +14,15 @@ except ImportError:
 
 setup(
     name='GfmPreview',
-    version='0.1.0',
+    version='0.2.0',
     author='Leo Ju',
     author_email='mr.simple@gmail.com',
-    packages=['gfm_preview'],
-    scripts=['bin/gfm-preview'],
-    package_data={'gfm_preview': ['templates/*']},
-    url='https://github.com/simple/gfm-preview',
+    packages=['md_preview'],
+    scripts=['bin/md-preview'],
+    package_data={'md_preview': ['templates/*']},
+    url='https://github.com/simple/md-preview',
     license='LICENSE.txt',
-    description='GitHub flavored markdown preview',
+    description='Simple markdown preview from command line',
     long_description=open('README.md').read(),
     **setuptools_kwargs
 )

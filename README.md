@@ -1,22 +1,20 @@
-# gfm-preview
+# MDPreview
 
-gfm-preview is just a good enough solution to rendering github flavored
-markdown documents.
+md-preview is just a good enough solution to previewing markdown documents
+as github styled HTML.
+
+## Install
+
+	$ pip install git+https://github.com/simple/md-preview.git
 
 
 ## Usage
 
-	$ export GITHUB_USERNAME=xxx	# optional
-	$ export GITHUB_TOKEN=xxx		# optional
-	$ gfm-preview document.md
-
-If username and token are not given, calls github API anonymously
+	$ md-preview filename [ filename ... ]
 
 
 ## Caveats
 
-* Depends on [GitHub Markdown Rendering API](http://developer.github.com/v3/markdown/).
-* No Caching; API is called every time you open a preview.
 * Only supports Mac OS X.
 
 ## Thanks
